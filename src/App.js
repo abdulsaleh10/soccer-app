@@ -1,4 +1,4 @@
-import './App.css';
+npimport './App.css';
 
 function App() {
   return (
