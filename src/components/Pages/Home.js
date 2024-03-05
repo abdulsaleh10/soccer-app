@@ -52,7 +52,7 @@ function Home() {
     createStandingsWidget('135', '2023', 'url("/images/italy.jpg")');
     createStandingsWidget('78', '2023', 'url("/images/germany.jpg")');
     createStandingsWidget('61', '2023', 'url("/images/france.jpg")');
-    createStandingsWidget('3', '2023', 'url("/images/europaleague.jpg")');
+    createStandingsWidget('3', '2023', 'url("/images/europaLeague.jpg")');
 
     // Cleanup function (optional, removes the iframes when the component unmounts)
     return () => {
