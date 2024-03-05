@@ -1,77 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import { Button } from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFutbol } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 function NavBar() {
-    const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
+  const [click, setClick] = useState(false);
 
-    const handleClick = () => setClick(!click);
-    const closeMobileMenu = () => setClick(false);
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
 
-    const showButton = () => {
-        if(window.innerWidth <= 960) {
-            setButton(false);
-        } else {
-            setButton(true);
-        }
-    };
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    closeMobileMenu(); // Close the mobile menu after scrolling to the top
+  };
 
-    useEffect(() => {
-        showButton();
-    }, []);
-  window.addEventListener('resize', showButton);
   return (
     <>
-    <nav className='navbar'>
+      <nav className='navbar'>
         <div className='navbar-container'>
-            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-               PitchPerfected  <FontAwesomeIcon icon={faFutbol}></FontAwesomeIcon>
-            </Link>
-            <div className='menu-icon' onClick={handleClick}>
-                <FontAwesomeIcon icon={click ? faTimes : faBars }/>  
-            </div>
-            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                <li className='nav-item'>
-                    <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                        Home
-                    </Link>
-                </li>
+          <Link to='/' className='navbar-logo' onClick={scrollToTop}>
+            PitchPerfected <FontAwesomeIcon icon={faFutbol}></FontAwesomeIcon>
+          </Link>
+          <div className='menu-icon' onClick={handleClick}>
+            <FontAwesomeIcon icon={click ? faTimes : faBars} />
+          </div>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link
-                to='/services'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Services
+              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                Home
               </Link>
             </li>
             <li className='nav-item'>
               <Link
-                to='/products'
+                to='/standings'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Products
+                Standings
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/about-us'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                About Us
               </Link>
             </li>
 
-            <li>
+            <li className='nav-item'>
               <Link
-                to='/sign-up'
-                className='nav-links-mobile'
+                to='/coming-soon'
+                className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Sign Up
+                Coming Soon
               </Link>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}
         </div>
       </nav>
     </>

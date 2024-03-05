@@ -8,6 +8,10 @@ import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
@@ -19,7 +23,7 @@ function Footer() {
       <section className='social-media'>
         <div className='social-media-wrap'>
           <div className='footer-logo'>
-            <Link to='/' className='social-logo'>
+            <Link to='/' className='social-logo' onClick={scrollToTop}>
               PitchPerfected <FontAwesomeIcon icon={faFutbol}></FontAwesomeIcon>
             </Link>
           </div>

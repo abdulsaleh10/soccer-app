@@ -6,9 +6,9 @@
 }
 
 .home,
-.services,
-.products,
-.sign-up {
+.standings-header,
+.about-us,
+.coming-soon {
   display: flex;
   height: 90vh;
   align-items: center;
@@ -16,29 +16,249 @@
   font-size: 3rem;
 }
 
-.services {
-  background-image: url('/Users/abdul/personal-app/public/images/img-2.jpg');
+.standings-header {
+  background-image: url('/Users/abdul/soccer-app/public/images/standingswallpaper.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
+  text-align: center;
+  height: 50vh;
 }
 
-.products {
-  background-image: url('/Users/abdul/personal-app/public/images/img-1.jpg');
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
+/* app.css */
+
+/* ... Your existing styles ... */
+/* app.css */
+/* app.css */
+
+/* ... Your existing styles ... */
+
+/* app.css */
+
+/* ... Your existing styles ... */
+
+.about-us-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:  black;;
   color: #fff;
-  font-size: 100px;
+  height: 90vh;
+  padding: 20px;
 }
 
-.sign-up {
-  background-image: url('/Users/abdul/personal-app/public/images/img-8.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.about-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  overflow: hidden; /* Ensure the border-radius is applied properly */
+}
+
+.image-wrapper {
+  border-radius: 8px; /* Apply border-radius to the wrapper */
+  overflow: hidden; /* Ensure the border-radius is applied properly */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+.text-container {
+  flex: 1;
+  padding: 0px 20px;
+  text-align: justify;
+}
+
+.text-container h2 {
+  font-size: 3em; /* Adjust the font size as needed */
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  font-size: 1.2em; /* Adjust the font size as needed */
+  line-height: 2;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .about-us-container {
+    height: auto; /* Adjust to make the container height dynamic on smaller screens */
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: 250px; /* Adjust the maximum width for the image on smaller screens */
+    padding: 5px;
+  }
+
+  .text-container h2 {
+    font-size: 24px; /* Adjust the font size for smaller screens */
+  }
+
+  .text-container p {
+    font-size: 0.6em; /* Adjust the font size for smaller screens */
+  }
+
+}
+
+/* app.css */
+/* app.css */
+
+/* ... Your existing styles ... */
+
+.second-section {
+  background-color: black;
+}
+
+.second-section .about-section {
+  flex-direction: row; /* Image on the right, text on the left */
+}
+
+.second-image-container {
+  width: 100%;
+  max-width: 550px;
+  padding: 50px 10px;
+  overflow: hidden;
+}
+
+.second-image-container .image-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.second-image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.second-text-container {
+  flex: 1;
+  padding: 30px 20px 10px;
+  text-align: justify;
+}
+
+.second-text-container h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.second-text-container p {
+  font-size: 1.2em;
+  line-height: 2;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .second-section .about-section {
+    flex-direction: row; /* Keep the same row layout on smaller screens */
+  }
+
+  .second-image-container {
+    max-width: 250px;
+    padding: 5px;
+  }
+
+  .second-text-container h2 {
+    font-size: 24px;
+  }
+
+  .second-text-container p {
+    font-size: 0.6em;
+  }
+}
+
+/* ... Your existing styles ... */
+
+
+
+.coming-soon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:  black;
   color: #fff;
-  font-size: 100px;
+  height: 90vh;
+  padding: 20px;
+}
+
+.coming-soon-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.coming-soon-image-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 10px;
+  overflow: hidden; /* Ensure the border-radius is applied properly */
+}
+
+.coming-soon-image-wrapper {
+  border-radius: 8px; /* Apply border-radius to the wrapper */
+  overflow: hidden; /* Ensure the border-radius is applied properly */
+}
+
+.coming-soon-image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+
+.coming-soon-text-container {
+  flex: 1;
+  padding: 0px 20px;
+  text-align: justify;
+}
+
+.coming-soon-text-container h2 {
+  font-size: 3em; /* Adjust the font size as needed */
+  margin-bottom: 10px;
+}
+
+.coming-soon-text-container p {
+  font-size: 1.2em; /* Adjust the font size as needed */
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .coming-soon-container {
+    height: auto; /* Adjust to make the container height dynamic on smaller screens */
+  }
+
+  .coming-soon-image-container {
+    width: 100%;
+    max-width: 250px; /* Adjust the maximum width for the image on smaller screens */
+    padding: 5px;
+  }
+
+  .coming-soon-text-container h2 {
+    font-size: 20px; /* Adjust the font size for smaller screens */
+  }
+
+  .coming-soon-text-container p {
+    font-size: 0.6em; /* Adjust the font size for smaller screens */
+  }
 }

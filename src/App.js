@@ -3,10 +3,10 @@ import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Pages/Home';
-import Services from './components/Pages/Services';
-import Products from './components/Pages/Products';
-import SignUp from './components/Pages/SignUp';
+import Standings from './components/Pages/Standings';
+import ComingSoon from './components/Pages/ComingSoon';
 import Footer from './components/Footer';
+import AboutUs from './components/Pages/AboutUs';
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' exact element={ <Home />}></Route>
-        <Route path='/services' element={ <Services />}></Route>
-        <Route path='/products' element={ <Products />}></Route>
-        <Route path='/sign-up' element={ <SignUp />}></Route>
+        <Route path='/standings' element={ <Standings />}></Route>
+        <Route path='/about-us' element={ <AboutUs />}></Route>
+        <Route path='/coming-soon' element={ <ComingSoon />}></Route>
       </Routes>
       <Footer />
     </Router>

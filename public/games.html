@@ -1,0 +1,34 @@
+<!-- games.html -->
+<link rel="stylesheet" href="widgets.css">
+<div id="wg-api-football-games"
+    data-host="v3.football.api-sports.io"
+    data-key="4b8a8edb4c304fc2d5dbeda1bbf769d2"
+    data-date=""
+    data-league=""
+    data-season=""
+    data-theme="false"
+    data-refresh="15"
+    data-show-toolbar="true"
+    data-show-errors="false"
+    data-show-logos="true"
+    data-modal-game="true"
+    data-modal-standings="false"
+    data-modal-show-logos="true">
+</div>
+
+<script src="scripts.js"></script>
+
+<script>
+    let games = document.getElementById('wg-api-football-games')
+    let league = get_parameter('league')
+    let season = get_parameter('season')
+    let date = get_parameter('date')
+    games.setAttribute('data-league', league)
+    games.setAttribute('data-season', season)
+    games.setAttribute('data-date', date)
+</script>
+
+<script
+    type="module"
+    src="https://widgets.api-sports.io/2.0.3/widgets.js">
+</script>

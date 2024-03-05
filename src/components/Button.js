@@ -1,18 +1,15 @@
-// import React from 'react';
-// import './Button.css';
-// import { Link } from 'react-router-dom';
-
-// export function Button() {
-//   return (
-//     <Link to='sign-up'>
-//       <button className='btn'>Sign Up</button>
-//     </Link>
-//   );
-// }
-
 import React from 'react';
-import './Button.css';
 import { Link } from 'react-router-dom';
+import './Button.css';
+
+export function Button2() {
+  return (
+    <Link to='coming-soon'>
+      <button className='btn'>Coming Soon</button>
+    </Link>
+  );
+}
+
 
 const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
 
@@ -23,7 +20,8 @@ export const Button = ({
   type,
   onClick,
   buttonStyle,
-  buttonSize
+  buttonSize,
+  targetSectionId
 }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
@@ -31,15 +29,30 @@ export const Button = ({
 
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
+  const scrollToSection = () => {
+    const section = document.getElementById(targetSectionId);
+    const navbar = document.querySelector('.navbar'); // Replace 'navbar' with the actual classname of your navbar
+  
+    if (section && navbar) {
+      const navbarHeight = navbar.getBoundingClientRect().height;
+  
+      window.scrollTo({
+        top: section.offsetTop - navbarHeight,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
-    <Link to='/sign-up' className='btn-mobile'>
-      <button
-        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-        onClick={onClick}
-        type={type}
-      >
-        {children}
-      </button>
-    </Link>
+    <button
+      className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+      onClick={() => {
+        scrollToSection();
+        if (onClick) onClick();
+      }}
+      type={type}
+    >
+      {children}
+    </button>
   );
 };
